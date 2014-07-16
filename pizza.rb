@@ -27,7 +27,7 @@ class Topping
 
   attr_reader :name, :vegetarian
 
-  def initialize (name = cheese, vegetarian: false)
+  def initialize (name = 'cheese', vegetarian: false)
     @name = name
     @vegetarian = vegetarian
   end
