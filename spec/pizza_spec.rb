@@ -21,10 +21,27 @@ describe Pizza do
       pizza = Pizza.new
       expect(pizza.toppings.size).to eq(1)
       expect(pizza.toppings.first.name).to eq('cheese')
-    end
-
+    end 
   end
 
+  describe '.vegetarain?' do
+    it "determines if pizza is vegetarain(true) or not(false)"do
+      toppings = [
+          Topping.new('mushrooms', vegetarian: true),
+          Topping.new('pepperoni')
+          ]
+      pizza = Pizza.new(toppings)
+      expect(pizza.vegetarian?).to eq(false)
+    end
+  end
+
+  describe '.add_topping' do
+     it "adds topping to recipe" do
+       pizza = Pizza.new
+       pizza.add_topping('mushrooms')
+       expect(pizza.toppings[1].name).to eq('mushrooms')
+     end
+   end
 
 end
 
