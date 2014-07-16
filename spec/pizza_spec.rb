@@ -31,6 +31,12 @@ describe Topping do
       topping = Topping.new 'bell peppers', vegetarian:true
       expect(topping.vegetarian).to eq(true)
     end
+
+    it 'sets whether or not the topping is vegetarian' do
+      topping = Topping.new 'sausage'
+      expect(topping.vegetarian).to eq(false)
+    end
+
   end
 
 end

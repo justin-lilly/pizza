@@ -6,15 +6,17 @@ class Pizza
     @name = name
   end
 
+
 end
 
 
 class Topping
 
-  attr_reader :name
+  attr_reader :name, :vegetarian
 
-  def initialize (name)
+  def initialize (name, vegetarian: false)
     @name = name
+    @vegetarian = vegetarian
   end
-  
+
 end
