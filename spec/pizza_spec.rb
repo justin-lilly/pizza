@@ -6,10 +6,15 @@ describe Pizza do
     expect(Pizza).to be_a(Class)
   end
 
+
   describe '.initialize' do
-  it "sets the name of the pizza" do
-      pizza = Pizza.new('supreme')
-      expect(pizza.name).to eq('supreme')
+    it "records all of the toppings" do
+      toppings = [
+          Topping.new('mushrooms', vegetarian: true),
+          Topping.new('pepperoni')
+          ]
+      pizza = Pizza.new(toppings)
+      expect(pizza.toppings).to eq(toppings)
     end
   end
 
@@ -33,7 +38,7 @@ describe Topping do
     end
 
     it 'sets whether or not the topping is vegetarian' do
-      topping = Topping.new 'sausage'
+      topping = Topping.new 'pepperoni'
       expect(topping.vegetarian).to eq(false)
     end
 
